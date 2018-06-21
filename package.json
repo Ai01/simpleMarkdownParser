@@ -1,0 +1,19 @@
+{
+  "name": "simplemarkdownparser",
+  "version": "1.0.0",
+  "description": "将markdown转换为html的编译器",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ai01/SimpleMarkdownParser.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ai01/SimpleMarkdownParser/issues"
+  },
+  "homepage": "https://github.com/Ai01/SimpleMarkdownParser#readme"
+}
