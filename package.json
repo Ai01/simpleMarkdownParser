@@ -4,7 +4,8 @@
   "description": "将markdown转换为html的编译器",
   "main": "index.js",
   "scripts": {
-    "test": "node ./test/test.js"
+    "test": "node ./test/test.js",
+    "test_tokenizer": "node ./test/test_tokenizer.js"
   },
   "repository": {
     "type": "git",
