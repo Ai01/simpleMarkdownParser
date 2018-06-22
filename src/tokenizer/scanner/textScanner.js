@@ -1,12 +1,13 @@
-const NOT_A_STRING = "Nas"
+const NOT_A_STRING = 'Nas';
 
 const textScanner = value => {
   if (!Array.isArray(value)) return null;
 
-  const res = [];
+  let res = [];
   let templateTextArray = [];
 
-  value.forEach((item, index) => {
+  // 将res中text部分变为null
+  value.forEach(item => {
     if (!item) return null;
 
     const { type, value } = item;
@@ -21,8 +22,26 @@ const textScanner = value => {
     }
   });
 
-  const stringArray = templateTextArray.join('').split(NOT_A_STRING);
 
+  // 将res中多余的null去除
+  res = res.filter((item, index) => {
+    if (item) {
+      return item;
+    }
+    if (!item && !res[index - 1]) {
+      return false;
+    }
+
+    return true;
+  });
+
+  // 将char变为单词组合存储起来
+  const stringArray = templateTextArray
+    .join('')
+    .split(NOT_A_STRING)
+    .filter(item => item);
+
+  // 将res中为text留的null换为对应的text
   return res
     .map(item => {
       if (!item) {
