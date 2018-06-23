@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "node ./test/test.js",
-    "test_tokenizer": "node ./test/test_tokenizer.js"
+    "test_tokenizer": "node ./test/test_tokenizer.js",
+    "test_parser": "node ./test/test_parser.js"
   },
   "repository": {
     "type": "git",
