@@ -20,7 +20,7 @@ const _match = tokens => {
   return res;
 };
 
-const formatParagraph = (tokens) => {
+const formatParagraph = tokens => {
   const _value = [];
   const _formatParagraph = paragraphTokens => {
     if (!Array.isArray(paragraphTokens) || !paragraphTokens.length) return null;
@@ -34,7 +34,6 @@ const formatParagraph = (tokens) => {
       }
       return true;
     });
-
 
     parsers.forEach(item => {
       const { parser: _parser, minLength } = item || {};

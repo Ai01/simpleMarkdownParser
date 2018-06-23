@@ -11,10 +11,9 @@ const _match = token => {
 };
 
 const textParser = token => {
-
   const value = _match(token);
 
-  if(!value) return false;
+  if (!value) return false;
 
   return {
     type: 'TEXT',
@@ -24,5 +23,5 @@ const textParser = token => {
 
 module.exports = {
   parser: textParser,
-  minLength: 1
+  minLength: 1,
 };
