@@ -6,7 +6,9 @@
   "scripts": {
     "test": "node ./test/test.js",
     "test_tokenizer": "node ./test/test_tokenizer.js",
-    "test_parser": "node ./test/test_parser.js"
+    "test_parser": "node ./test/test_parser.js",
+    "test_generator": "node ./test/test_generator.js",
+    "write_html": "node ./utils/setMarkdownFileContent"
   },
   "repository": {
     "type": "git",
