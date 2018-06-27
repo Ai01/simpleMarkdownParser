@@ -1,4 +1,4 @@
-const NOT_A_STRING = 'Nas';
+const NOT_A_STRING = 'NAS';
 
 const textScanner = value => {
   if (!Array.isArray(value)) return null;
