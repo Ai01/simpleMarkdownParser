@@ -1,3 +1,6 @@
-__Foo__ and *text*.
+__Foo__ and **text*.
 
 Another para.
+
+
+*foo*

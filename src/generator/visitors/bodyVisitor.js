@@ -13,7 +13,7 @@ const bodyVisitor = value => {
       }).join('')
     : '';
 
-  return ` <body>${innerHtml}</body>`;
+  return `<html><body>${innerHtml}</body></html>`;
 };
 
 module.exports = bodyVisitor;

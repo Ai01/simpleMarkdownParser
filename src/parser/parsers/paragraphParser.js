@@ -26,10 +26,9 @@ const formatParagraph = tokens => {
     if (!Array.isArray(paragraphTokens) || !paragraphTokens.length) return null;
 
     let parsers = [boldParser, emphasisParser, textParser];
-    const paragraphTokensLength = paragraphTokens.length;
-
+    // filter the parser according to the minWith and tokens length
     parsers = parsers.filter(item => {
-      if (item.minLength > paragraphTokensLength) {
+      if (item.minLength > paragraphTokens.length) {
         return false;
       }
       return true;
@@ -52,18 +51,22 @@ const formatParagraph = tokens => {
 };
 
 const paragraphParser = tokens => {
+  // use match to generate get the value for this parser
   const OriginalParagraphs = _match(tokens);
 
-  const nextParagraphs = OriginalParagraphs.map(item => {
+  return OriginalParagraphs.filter(i => {
+    // filter the empty paragraphs
+    if (i && i.value && i.value.length) return true;
+    return false;
+  }).map(item => {
     const { value, type } = item;
 
+    // transfer the value;
     return {
       type,
       value: formatParagraph(value),
     };
   });
-
-  return nextParagraphs;
 };
 
 module.exports = paragraphParser;
