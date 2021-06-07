@@ -1,22 +1,23 @@
 const TOKEN_TYPES = require('../tokens/tokenTypes');
 
+// 在一次循环中，遍历出所有的token
 const getToken = value => {
   if (!Array.isArray(value)) return null;
 
+  // 用来记录文字
   let templateText = '';
 
   const res = value.map((item, index) => {
-    // if match token
+    //  如果命中了token类型
     if (TOKEN_TYPES[item]) return { type: TOKEN_TYPES[item], value: item };
 
-    // if the item and next item both can't match token. it means this item is text
+    // 如果连续都不命中token，那么是文字
     if (!TOKEN_TYPES[item] && !TOKEN_TYPES[value[index + 1]]) {
       templateText += item;
       return null;
     }
 
-    // if this item isn't token but next is token.
-    // need to put the templateText in res and reset templateText
+    // 如果当前非token，下一个值是token。那么文字类型结束
     if (!TOKEN_TYPES[item] && TOKEN_TYPES[value[index + 1]]) {
       const _value = templateText += item;
       templateText = '';

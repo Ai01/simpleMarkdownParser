@@ -6,12 +6,13 @@ transfer markdown to html
 
 - finished:
 
-    - \_\_text__
-    _ \*text*
+    - \_\_text\_\_
+    _ \*text\*
+    - \#
+    - \#\#
     
 - unFinished:    
 
-    - \#
     - \```
     - \-
 
@@ -23,6 +24,11 @@ npm run test_parser 测试语法分析
 npm run test_tokenizer 测试词法分析
 npm run write_html 将markdown中的内容写入到html文件中，用浏览器打开public/test.html就可以看见结果
 ```
+
+## 问题
+
+1. 在组合型parser的初次处理下，类似`-`这样的无序列表如何处理？
+2. 语法分析从上至下和从下至上的不同？
 
 ## 关键的问题，也是需要从这个代码中学到的东西
 

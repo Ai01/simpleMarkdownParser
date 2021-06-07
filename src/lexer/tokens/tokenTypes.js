@@ -9,7 +9,9 @@
 const TOKEN_TYPES = {
   '*': 'STAR',
   '\n': 'NEWLINE',
-  _: 'UNDERSCORE',
+  '_': 'UNDERSCORE',
+  '#': 'TITLE',
+  '-': 'STRIKE'
 };
 
 module.exports = TOKEN_TYPES;

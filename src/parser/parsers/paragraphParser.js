@@ -1,6 +1,8 @@
 const textParser = require('./textParser');
 const boldParser = require('./boldParser');
 const emphasisParser = require('./emphasisParser');
+const titleOneParser = require('./titleOneParser');
+const titleTwoParser = require('./titleTwoParser');
 
 const _match = tokens => {
   if (!Array.isArray(tokens)) return [];
@@ -25,8 +27,9 @@ const formatParagraph = tokens => {
   const _formatParagraph = paragraphTokens => {
     if (!Array.isArray(paragraphTokens) || !paragraphTokens.length) return null;
 
-    let parsers = [boldParser, emphasisParser, textParser];
-    // filter the parser according to the minWith and tokens length
+    let parsers = [titleOneParser, boldParser, emphasisParser, titleTwoParser, textParser];
+
+    // 如果token的长度小于parser要求的最低长度。那么跳过
     parsers = parsers.filter(item => {
       if (item.minLength > paragraphTokens.length) {
         return false;
