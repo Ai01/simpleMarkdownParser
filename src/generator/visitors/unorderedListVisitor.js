@@ -20,7 +20,7 @@ const unorderedListParser = (ast) => {
         .join("")
     : "";
 
-  return `<ol>${innerHtml}</ol>`;
+  return `<ul>${innerHtml}</ul>`;
 };
 
 module.exports = unorderedListParser;
