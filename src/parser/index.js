@@ -26,6 +26,7 @@
 // 节点型parser某种程度上也是一种token 组合。但是不同之处在于，节点型parser有一个token组合的规矩。
 // 比如bold parser就规定了UNDERSCORE UNDERSCORE TEXT UNDERSCORE UNDERSCORE这个规定, 满足这个规定才是bold parser
 // 从上到下的parser就是先分割出组合parser。然后在组合parser中分割出节点parser
+//
 const bodyParser = require('./parsers/bodyParser');
 
 const parser = tokens => {
