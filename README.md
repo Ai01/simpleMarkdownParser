@@ -10,11 +10,11 @@ transfer markdown to html
     - \*text\*
     - \#
     - \#\#
+    - \- 无序列表
 
 - unFinished:
 
     - \``` 代码片段
-    - \- 无序列表
     - 有序列表
     - \` 行内代码片段
 
